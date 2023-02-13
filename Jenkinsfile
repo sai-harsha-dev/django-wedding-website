@@ -12,7 +12,7 @@ pipeline{
         }
         stage( "Build docker container" ){
             steps{
-                sh 'sudo docker build -t ${REPO} .'
+                sh 'sudo docker build -t ${DOCKER_USR}/${REPO} .'
                 sh 'sudo docker images'
             }
         }

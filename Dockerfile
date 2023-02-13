@@ -4,7 +4,7 @@ WORKDIR /django-app
 
 COPY . .
 
-RUN sudo apt update && sudo apt install -y python3 && sudo apt install -y python3-pip
+RUN apt update && apt install -y python3 && apt install -y python3-pip
 
 RUN pip install -r requirements.txt && \
     python3 manage.py migrate && \

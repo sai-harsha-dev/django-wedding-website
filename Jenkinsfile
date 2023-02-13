@@ -18,7 +18,7 @@ pipeline{
         }
         stage ( "Push to registry" ){
             steps{
-                sh 'echo ${DOCKER_PSW} | docker login -u ${DOCKER_USR} --password-stdin'
+                sh 'echo ${DOCKER_PSW} |sudo docker login -u ${DOCKER_USR} --password-stdin'
                 sh 'sudo docker push ${DOCKER_USR}/${REPO}'
             }
         }

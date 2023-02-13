@@ -8,7 +8,7 @@ RUN apt update && apt install -y python3 && apt install -y python3-pip
 
 RUN pip install -r requirements.txt && \
     python3 manage.py migrate && \
-    python3 manage.py createsuperuser && \
+    python3 manage.py createsuperuser
 
 EXPOSE 8000
 

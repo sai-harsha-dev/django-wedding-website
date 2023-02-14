@@ -26,7 +26,7 @@ pipeline{
 
     post {
         success {
-            build 'DJANGO CONTAINER RUN'
+            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: '${REPO}'), string(name: 'IMAGE_NAME', value: '${DOCKER_USR}/${REPO}')]
          }
     }
 }

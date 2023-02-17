@@ -5,7 +5,7 @@ pipeline{
     }
     parameters {
         string defaultValue: 'djangoapp', name: 'REPO'
-        string defaultValue: "${DOCKER_USR}/${REPO}", name: 'IMAGE'
+        string defaultValue: env.DOCKER_USR/"${REPO}", name: 'IMAGE'
     }
     stages{
         stage( "Clone repo" ){

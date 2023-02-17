@@ -5,6 +5,7 @@ pipeline{
     }
     parameters {
         string defaultValue: 'djangoapp', name: 'REPO'
+        string defaultValue: "${DOCKER_USR}/${REPO}". name: 'IMAGE'
     }
     stages{
         stage( "Clone repo" ){
@@ -28,7 +29,7 @@ pipeline{
 
     post {
         success {
-            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "${env.DOCKER_USR}/djangoapp")]
+            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "${IMAGE}")]
          }
     }
 }

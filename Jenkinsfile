@@ -2,7 +2,9 @@ pipeline{
     agent any
     environment{
         DOCKER = credentials("Docker")
-        REPO = "djangoapp" 
+    }
+    parameters {
+        string defaultValue: 'djangoapp', name: 'REPO'
     }
     stages{
         stage( "Clone repo" ){
@@ -26,7 +28,7 @@ pipeline{
 
     post {
         success {
-            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "${DOCKER_USR}"/"${REPO}")]
+            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "vnsharsha7999/djangoapp")]
          }
     }
 }

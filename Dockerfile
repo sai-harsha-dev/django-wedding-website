@@ -6,22 +6,9 @@ COPY . .
 
 RUN apt update && apt install -y python3 && apt install -y python3-pip
 
-<<<<<<< HEAD
-RUN pip install -r requirements.txt
-
-FROM gcr.io/distroless/python3
-
-WORKDIR /django-app
-
-COPY --from=build_stage /django-app .
-
-RUN python3 manage.py migrate && \
-    python3 manage.py createsuperuser
-=======
-RUN pip install -r requirements.txt && \
+RUN pip install -r requirements.txt &&\
     python3 manage.py migrate && \
-    python3 manage.py createsuperuser && \
->>>>>>> parent of b4e9390 (Modified)
+    python3 manage.py createsuperuser
 
 EXPOSE 8000
 

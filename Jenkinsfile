@@ -26,9 +26,9 @@ pipeline{
         }
     }
 
-    post {
-        success {
-            build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "vnsharsha7999/djangoapp")]
-         }
-    }
+    // post {
+    //     success {
+    //         build job: 'DJANGO CONTAINER RUN', parameters: [string(name: 'CONTAINER_NAME', value: "${REPO}" ), string(name: 'IMAGE_NAME', value: "vnsharsha7999/djangoapp")]
+    //      }
+    // }
 }

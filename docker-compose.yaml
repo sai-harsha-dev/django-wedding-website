@@ -6,4 +6,4 @@ services:
       - "8000:8000"
     deploy:
       replicas: 2
-    container_name: Django
+    container_name: Django-app

@@ -5,5 +5,5 @@ services:
     ports:
       - "8000:8000"
     deploy:
-      replicas: 1
+      replicas: 2
     container_name: Django

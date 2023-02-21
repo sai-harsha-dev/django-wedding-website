@@ -1,0 +1,9 @@
+version:  "3.8"
+services:
+  app:
+    image: vnsharsha7999/djangoapp
+    ports:
+      - "8000:8000"
+    deploy:
+      replicas: 1
+    container_name: Django
